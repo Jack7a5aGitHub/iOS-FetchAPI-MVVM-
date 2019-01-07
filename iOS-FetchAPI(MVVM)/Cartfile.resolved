@@ -1,0 +1,5 @@
+github "Alamofire/Alamofire" "4.8.0"
+github "ReactiveX/RxSwift" "4.4.0"
+github "SVProgressHUD/SVProgressHUD" "2.2.5"
+github "ashleymills/Reachability.swift" "v4.3.0"
+github "onevcat/Kingfisher" "5.0.1"
