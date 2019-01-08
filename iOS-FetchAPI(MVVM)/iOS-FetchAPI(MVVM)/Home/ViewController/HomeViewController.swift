@@ -8,22 +8,38 @@
 
 import UIKit
 import RxCocoa
+import RxSwift
 import AVFoundation
 import SVProgressHUD
 
 final class HomeViewController: UIViewController {
 
-    var viewModel = HomeViewModel()
+    @IBOutlet private var searchBar: UISearchBar!
+    @IBOutlet private var photoCollectionView: UICollectionView!
+    private let loadingView = UIActivityIndicatorView(style: .gray)
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let viewModel = HomeViewModel(disposeBag: disposeBag)
     }
 
 }
 
 extension HomeViewController {
-    private func binding() {
-        
+    
+    // MARK: Private
+    private func bindKeyword(to viewModel: HomeViewModel) {
+            searchBar.rx
+                     .text
+                .asObservable()
+                .flatMap { inputText -> Observable<String> in
+                    self.getString(text: inputText!)
+        }.bind(to: viewModel.keywordObserver).disposed(by: disposeBag)
+      
     }
+    private func getString(text: String) -> Observable<String> {
+        return Observable.just(text)
+    }
+
 }

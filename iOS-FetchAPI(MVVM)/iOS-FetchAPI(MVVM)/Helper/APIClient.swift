@@ -7,6 +7,7 @@
 //
 
 import Alamofire
+import RxSwift
 import UIKit
 
 enum Result {
@@ -39,10 +40,8 @@ final class APIClient {
     
     /// API Request
     static func request(router: Router,
-                        completionHandler: @escaping (Result) -> Void = { _ in }) {
-        
-        Alamofire.request(router).responseJSON { response in
-            
+                        completionHandler: @escaping (Result) -> Void = { _ in }) -> DataRequest {
+        let request = Alamofire.request(router).responseJSON { response in
             guard let statusCode = response.response?.statusCode else {
                 print("no status Code")
                 // api request timeout 処理
@@ -51,7 +50,6 @@ final class APIClient {
                 }
                 return
             }
-            
             var responseJson = ""
             if let json = response.result.value as? [String: Any] {
                 responseJson = json.prettyPrintedJsonString
@@ -64,9 +62,7 @@ final class APIClient {
                     }
                 }
             }
-            
             switch response.result {
-                
             case .success:
                 switch statusCode {
                 case HTTPStatusCode.success.rawValue:
@@ -77,7 +73,6 @@ final class APIClient {
                 default:
                     return
                 }
-                
             case .failure:
                 LogHelper.log("\n🔻🔻🔻" +
                     "\nStatusCode: \(statusCode)\nResponseBody: \(responseJson)")
@@ -88,7 +83,8 @@ final class APIClient {
                 }
             }
         }
+        return request
     }
+    
 }
-
 

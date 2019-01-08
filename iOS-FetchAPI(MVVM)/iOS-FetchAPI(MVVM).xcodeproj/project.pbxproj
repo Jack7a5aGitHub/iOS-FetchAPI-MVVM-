@@ -32,6 +32,11 @@
 		0A995B9921E2EAE70038EBDC /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A995B9821E2EAE70038EBDC /* NetworkConnection.swift */; };
 		0A995B9B21E2EB190038EBDC /* LogHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A995B9A21E2EB190038EBDC /* LogHelper.swift */; };
 		0A995B9D21E2ECEC0038EBDC /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A995B9C21E2ECEC0038EBDC /* AlertHelper.swift */; };
+		0A995B9F21E2F29D0038EBDC /* GetPhotoParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A995B9E21E2F29D0038EBDC /* GetPhotoParameter.swift */; };
+		0A995BA321E2F3FD0038EBDC /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A995BA221E2F3FD0038EBDC /* EndPoint.swift */; };
+		0A995BA521E2F6490038EBDC /* WebAPIRequestParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A995BA421E2F6490038EBDC /* WebAPIRequestParameter.swift */; };
+		0A995BA721E2F6690038EBDC /* WebAPIRequestParameterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A995BA621E2F6690038EBDC /* WebAPIRequestParameterProtocol.swift */; };
+		0A995BA921E33E110038EBDC /* Model+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A995BA821E33E110038EBDC /* Model+Rx.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +67,11 @@
 		0A995B9821E2EAE70038EBDC /* NetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
 		0A995B9A21E2EB190038EBDC /* LogHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogHelper.swift; sourceTree = "<group>"; };
 		0A995B9C21E2ECEC0038EBDC /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
+		0A995B9E21E2F29D0038EBDC /* GetPhotoParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPhotoParameter.swift; sourceTree = "<group>"; };
+		0A995BA221E2F3FD0038EBDC /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		0A995BA421E2F6490038EBDC /* WebAPIRequestParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIRequestParameter.swift; sourceTree = "<group>"; };
+		0A995BA621E2F6690038EBDC /* WebAPIRequestParameterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIRequestParameterProtocol.swift; sourceTree = "<group>"; };
+		0A995BA821E33E110038EBDC /* Model+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Model+Rx.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +111,7 @@
 		0A37509521DE393E00901BA0 /* iOS-FetchAPI(MVVM) */ = {
 			isa = PBXGroup;
 			children = (
+				0A995BA021E2F30C0038EBDC /* Respositories */,
 				0A995B8721E2DC1F0038EBDC /* Helper */,
 				0A995B8621E2DC070038EBDC /* Extension */,
 				0A995B7721E248E50038EBDC /* Home */,
@@ -134,7 +145,6 @@
 		0A995B7721E248E50038EBDC /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				0A995B7D21E250F00038EBDC /* Model */,
 				0A995B7821E248F10038EBDC /* View */,
 				0A995B7921E248F70038EBDC /* ViewModel */,
 				0A995B7421E0F2170038EBDC /* ViewController */,
@@ -173,6 +183,7 @@
 		0A995B7D21E250F00038EBDC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0A995B9E21E2F29D0038EBDC /* GetPhotoParameter.swift */,
 				0A995B7E21E251920038EBDC /* PhotoModel.swift */,
 			);
 			path = Model;
@@ -216,6 +227,26 @@
 				0A995B8E21E2E58D0038EBDC /* Extension+UIFont.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		0A995BA021E2F30C0038EBDC /* Respositories */ = {
+			isa = PBXGroup;
+			children = (
+				0A995BA121E2F3270038EBDC /* API */,
+			);
+			path = Respositories;
+			sourceTree = "<group>";
+		};
+		0A995BA121E2F3270038EBDC /* API */ = {
+			isa = PBXGroup;
+			children = (
+				0A995BA221E2F3FD0038EBDC /* EndPoint.swift */,
+				0A995B7D21E250F00038EBDC /* Model */,
+				0A995BA421E2F6490038EBDC /* WebAPIRequestParameter.swift */,
+				0A995BA621E2F6690038EBDC /* WebAPIRequestParameterProtocol.swift */,
+				0A995BA821E33E110038EBDC /* Model+Rx.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,16 +353,21 @@
 				0A995B8D21E2E4210038EBDC /* Extension+UILabel.swift in Sources */,
 				0A995B9D21E2ECEC0038EBDC /* AlertHelper.swift in Sources */,
 				0A995B7B21E249140038EBDC /* HomeViewModel.swift in Sources */,
+				0A995BA321E2F3FD0038EBDC /* EndPoint.swift in Sources */,
 				0A995B9721E2E87E0038EBDC /* Router.swift in Sources */,
 				0A995B7F21E251920038EBDC /* PhotoModel.swift in Sources */,
 				0A995B7621E0F23B0038EBDC /* HomeViewController.swift in Sources */,
 				0A995B8F21E2E58D0038EBDC /* Extension+UIFont.swift in Sources */,
 				0A995B9321E2E8380038EBDC /* Dictionary+JSON.swift in Sources */,
+				0A995BA921E33E110038EBDC /* Model+Rx.swift in Sources */,
 				0A995B8921E2DC430038EBDC /* NSObject+classname.swift in Sources */,
 				0A995B9B21E2EB190038EBDC /* LogHelper.swift in Sources */,
 				0A995B9521E2E8550038EBDC /* String+Localized.swift in Sources */,
+				0A995B9F21E2F29D0038EBDC /* GetPhotoParameter.swift in Sources */,
 				0A995B9121E2E80F0038EBDC /* APIClient.swift in Sources */,
 				0A995B9921E2EAE70038EBDC /* NetworkConnection.swift in Sources */,
+				0A995BA721E2F6690038EBDC /* WebAPIRequestParameterProtocol.swift in Sources */,
+				0A995BA521E2F6490038EBDC /* WebAPIRequestParameter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
