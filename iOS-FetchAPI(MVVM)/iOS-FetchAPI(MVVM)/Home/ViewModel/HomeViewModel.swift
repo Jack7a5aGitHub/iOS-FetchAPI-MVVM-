@@ -6,6 +6,7 @@
 //  Copyright © 2019 Jack Wong. All rights reserved.
 //
 
+import SVProgressHUD
 import Foundation
 import RxSwift
 
@@ -46,12 +47,12 @@ extension HomeViewModel {
     // MARK: Public
     func bindObservableToGetPhoto() {
        keywordSubject.asObservable()
-        .do(onNext: {_ in self.isLoadingVariable.value = true })
+        .do(onNext: {_ in SVProgressHUD.Photo.show() })
         .debounce(1.0, scheduler: MainScheduler.instance)
         .flatMap { (keyword) -> Observable<[PhotoDetailList]> in
             print("bind keyword", keyword)
             return self.getPhoto(with: keyword)
-        }.do(onNext: { _ in self.isLoadingVariable.value = false })
+        }.do(onNext: { _ in SVProgressHUD.dismiss() })
         .bind(to: photoVariable)
         .disposed(by: disposeBag)
         
@@ -60,7 +61,7 @@ extension HomeViewModel {
     // MARK: Private
     private func getPhoto(with keyword: String) -> Observable<[PhotoDetailList]> {
      
-        guard !keyword.isEmpty else {
+        guard !keyword.isEmpty && keyword.count > 2 else {
             return .just([])
         }
         

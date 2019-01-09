@@ -54,6 +54,8 @@ struct PhotoModel {
                     let fetchResult = try? decoder.decode(SearchInfo.self, from: data)
                     let photoDetailList = fetchResult?.info.photo
                     guard let photo = photoDetailList else {
+                        subscriber.onNext([])
+                        subscriber.onCompleted()
                         return
                     }
                     

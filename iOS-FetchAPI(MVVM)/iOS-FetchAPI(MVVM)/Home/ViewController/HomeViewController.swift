@@ -16,7 +16,7 @@ final class HomeViewController: UIViewController {
 
     @IBOutlet private var searchBar: UISearchBar!
     @IBOutlet private var photoCollectionView: UICollectionView!
-    private let loadingView = UIActivityIndicatorView(style: .gray)
+    private let loadingView = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -61,8 +61,5 @@ extension HomeViewController {
                 cell.title = photos.photoTitle
         }.disposed(by: disposeBag)
     }
-//    private func bindLoadingView(to viewModel: HomeViewModel) {
-//        viewModel.isLoading
-//    }
 
 }

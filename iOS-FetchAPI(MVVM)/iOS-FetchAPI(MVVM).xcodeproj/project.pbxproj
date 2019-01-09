@@ -38,6 +38,7 @@
 		0A995BA721E2F6690038EBDC /* WebAPIRequestParameterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A995BA621E2F6690038EBDC /* WebAPIRequestParameterProtocol.swift */; };
 		0A995BA921E33E110038EBDC /* Model+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A995BA821E33E110038EBDC /* Model+Rx.swift */; };
 		0A995BF221E5E0B60038EBDC /* Template.plswift in Sources */ = {isa = PBXBuildFile; fileRef = 0A995BF121E5E0B60038EBDC /* Template.plswift */; };
+		0A995BF521E5EEB00038EBDC /* SVProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A995BF421E5EEB00038EBDC /* SVProgress.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		0A995BA621E2F6690038EBDC /* WebAPIRequestParameterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIRequestParameterProtocol.swift; sourceTree = "<group>"; };
 		0A995BA821E33E110038EBDC /* Model+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Model+Rx.swift"; sourceTree = "<group>"; };
 		0A995BF121E5E0B60038EBDC /* Template.plswift */ = {isa = PBXFileReference; lastKnownFileType = text; path = Template.plswift; sourceTree = "<group>"; };
+		0A995BF421E5EEB00038EBDC /* SVProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVProgress.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 		0A995B8621E2DC070038EBDC /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				0A995BF321E5EEA00038EBDC /* OSS */,
 				0A995B8B21E2E4030038EBDC /* UIKit */,
 				0A995B8A21E2E3F50038EBDC /* Foundation */,
 			);
@@ -250,6 +253,14 @@
 				0A995BA821E33E110038EBDC /* Model+Rx.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		0A995BF321E5EEA00038EBDC /* OSS */ = {
+			isa = PBXGroup;
+			children = (
+				0A995BF421E5EEB00038EBDC /* SVProgress.swift */,
+			);
+			path = OSS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,6 +371,7 @@
 				0A995B9721E2E87E0038EBDC /* Router.swift in Sources */,
 				0A995B7F21E251920038EBDC /* PhotoModel.swift in Sources */,
 				0A995B7621E0F23B0038EBDC /* HomeViewController.swift in Sources */,
+				0A995BF521E5EEB00038EBDC /* SVProgress.swift in Sources */,
 				0A995B8F21E2E58D0038EBDC /* Extension+UIFont.swift in Sources */,
 				0A995B9321E2E8380038EBDC /* Dictionary+JSON.swift in Sources */,
 				0A995BA921E33E110038EBDC /* Model+Rx.swift in Sources */,
