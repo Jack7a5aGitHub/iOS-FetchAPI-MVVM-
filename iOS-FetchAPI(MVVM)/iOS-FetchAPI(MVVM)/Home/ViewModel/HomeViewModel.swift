@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 struct HomeViewModel {
-    
+    //Output
     var photos: Observable<[PhotoDetailList]> {
         return self.photoVariable.asObservable()
     }
@@ -27,7 +27,7 @@ struct HomeViewModel {
     var error: Observable<Error> {
         return self.errorSubject.asObservable()
     }
-    
+    // Input
     private let photoVariable = Variable<[PhotoDetailList]>([])
     private let isLoadingVariable = Variable(false)
     private let isOfflineVariable = Variable(false)
@@ -48,8 +48,9 @@ extension HomeViewModel {
        keywordSubject.asObservable()
         .do(onNext: {_ in self.isLoadingVariable.value = true })
         .debounce(1.0, scheduler: MainScheduler.instance)
-        .flatMap { (error) -> Observable<[PhotoDetailList]> in
-            return self.getPhoto(with: nil)
+        .flatMap { (keyword) -> Observable<[PhotoDetailList]> in
+            print("bind keyword", keyword)
+            return self.getPhoto(with: keyword)
         }.do(onNext: { _ in self.isLoadingVariable.value = false })
         .bind(to: photoVariable)
         .disposed(by: disposeBag)
@@ -57,10 +58,8 @@ extension HomeViewModel {
     }
     
     // MARK: Private
-    private func getPhoto(with keyword: String?) -> Observable<[PhotoDetailList]> {
-        guard let keyword = keyword else {
-            return .just([])
-        }
+    private func getPhoto(with keyword: String) -> Observable<[PhotoDetailList]> {
+     
         guard !keyword.isEmpty else {
             return .just([])
         }
@@ -68,6 +67,5 @@ extension HomeViewModel {
         return PhotoModel()
             .getPhoto(with: keyword)
             .catchErrorJustReturn([])
-
     }
 }

@@ -37,6 +37,7 @@
 		0A995BA521E2F6490038EBDC /* WebAPIRequestParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A995BA421E2F6490038EBDC /* WebAPIRequestParameter.swift */; };
 		0A995BA721E2F6690038EBDC /* WebAPIRequestParameterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A995BA621E2F6690038EBDC /* WebAPIRequestParameterProtocol.swift */; };
 		0A995BA921E33E110038EBDC /* Model+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A995BA821E33E110038EBDC /* Model+Rx.swift */; };
+		0A995BF221E5E0B60038EBDC /* Template.plswift in Sources */ = {isa = PBXBuildFile; fileRef = 0A995BF121E5E0B60038EBDC /* Template.plswift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		0A995BA421E2F6490038EBDC /* WebAPIRequestParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIRequestParameter.swift; sourceTree = "<group>"; };
 		0A995BA621E2F6690038EBDC /* WebAPIRequestParameterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIRequestParameterProtocol.swift; sourceTree = "<group>"; };
 		0A995BA821E33E110038EBDC /* Model+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Model+Rx.swift"; sourceTree = "<group>"; };
+		0A995BF121E5E0B60038EBDC /* Template.plswift */ = {isa = PBXFileReference; lastKnownFileType = text; path = Template.plswift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 				0A995B9821E2EAE70038EBDC /* NetworkConnection.swift */,
 				0A995B9A21E2EB190038EBDC /* LogHelper.swift */,
 				0A995B9C21E2ECEC0038EBDC /* AlertHelper.swift */,
+				0A995BF121E5E0B60038EBDC /* Template.plswift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				0A995B8921E2DC430038EBDC /* NSObject+classname.swift in Sources */,
 				0A995B9B21E2EB190038EBDC /* LogHelper.swift in Sources */,
 				0A995B9521E2E8550038EBDC /* String+Localized.swift in Sources */,
+				0A995BF221E5E0B60038EBDC /* Template.plswift in Sources */,
 				0A995B9F21E2F29D0038EBDC /* GetPhotoParameter.swift in Sources */,
 				0A995B9121E2E80F0038EBDC /* APIClient.swift in Sources */,
 				0A995B9921E2EAE70038EBDC /* NetworkConnection.swift in Sources */,

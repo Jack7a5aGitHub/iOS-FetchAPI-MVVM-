@@ -21,7 +21,10 @@ final class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerNib()
         let viewModel = HomeViewModel(disposeBag: disposeBag)
+        bindKeyword(to: viewModel)
+        bindCollectionView(to: viewModel)
     }
 
 }
@@ -29,6 +32,12 @@ final class HomeViewController: UIViewController {
 extension HomeViewController {
     
     // MARK: Private
+    private func registerNib() {
+    
+        let photoNib = UINib(nibName: PhotoCell.nibName, bundle: nil)
+        photoCollectionView.register(photoNib, forCellWithReuseIdentifier: PhotoCell.identifier)
+    }
+    
     private func bindKeyword(to viewModel: HomeViewModel) {
             searchBar.rx
                      .text
@@ -41,5 +50,19 @@ extension HomeViewController {
     private func getString(text: String) -> Observable<String> {
         return Observable.just(text)
     }
+    
+    private func bindCollectionView(to viewModel: HomeViewModel) {
+        
+        viewModel
+        .photos
+            .bind(to: photoCollectionView.rx.items(cellIdentifier: PhotoCell.identifier, cellType: PhotoCell.self)) {
+                (_, photos, cell) in
+                cell.imageUrl = photos.imageUrl
+                cell.title = photos.photoTitle
+        }.disposed(by: disposeBag)
+    }
+//    private func bindLoadingView(to viewModel: HomeViewModel) {
+//        viewModel.isLoading
+//    }
 
 }

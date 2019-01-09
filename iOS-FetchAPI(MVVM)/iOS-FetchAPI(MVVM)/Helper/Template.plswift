@@ -1,0 +1,21 @@
+
+//
+//  Driver.swift
+//  iOS-FetchAPI(MVVM)
+//
+//  Created by Jack Wong on 2019/01/09.
+//  Copyright © 2019 Jack Wong. All rights reserved.
+//
+
+import Foundation
+import RxSwift
+
+final class Template<Element> {
+    
+    let observable: Observable<Element>
+    
+    init(_ subscribe: @escaping (AnyObserver<Element>) -> Disposable) {
+        observable = Observable.create(subscribe)
+            .subscribeOn(MainScheduler.instance)
+    }
+}
